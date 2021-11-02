@@ -1,25 +1,20 @@
-import 'dart:math';
-
 void main() {
-  var max;
-  int a = 32;
-  int b = 12;
-  int c = 64;
+  pintaTaula(3);
+}
 
-  if (a > b) {
-    max = a;
-  } else {
-    max = b;
+// Mètode que pinta la cuadrícula amb el paràmtere de nombre de cubs
+void pintaTaula(int nombreCubs) {
+  // Elements de disseny bàsics
+  String linies = " ---";
+  String columnes = "|   ";
+
+  // Bucle per anar pintant les files i columnes en una sola passada
+  // Es pot fer també amb diversos bucles anidats
+  for (var i = 0; i < nombreCubs; i++) {
+    print(linies * nombreCubs);
+    print(columnes * (nombreCubs + 1));
   }
 
-  if (c > max) {
-    max = c;
-  }
-  print(max);
-
-  // Una altre forma seria, col·locar totes les variables dintre d'una llista,
-  // ordenar-la i escollir el darrer
-  List l = [a, b, c, 4, 5, 2, 1];
-  l.sort();
-  print(l.last);
+  // Afegim la darrera linia d'abaix
+  print("${linies * nombreCubs}\n");
 }
